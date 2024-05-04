@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<center>
+    <form action="/takeFile" enctype='multipart/form-data' method="POST">
+        <div class="mb-3">
+            <input class="form-control" type="file" id="videofile" name="videofile">
+        </div>
+        <input type="submit" value="轉換" id="convert"/>
+    </form>
+    <textarea id="outputText" name="outputText" disabled>{%for line in lines%}{{line}}{%endfor%}</textarea>
+    <a class="btn btn-success" href="{{url_for('download_file')}}" style="float:left;" disabled>下載純字幕檔</a>
+    <a class="btn btn-success" href="{{url_for('preview')}}" id='preview_btn' name='preview_btn' target="_blank" style="float:left;" disabled>預覽影片</a> 
+</center>
+{% endblock  %}

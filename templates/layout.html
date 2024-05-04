@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Subtitle Generator</title>
+</head>
+<body style="background-color:#212129;color: #e2e9e7;">
+	<nav class="mb-auto fixed-top">
+		<div class="row">
+			<div class="col-4" id="logo">
+				<h3 class="float-md-start mb-0" id='title'>字幕生成工具</h3>
+			</div>
+			<div class="col-8" id="navlinks">
+				<ul class="nav nav-masthead justify-content-center float-md-end">
+					<li><a class="nav-link active" aria-current="page" href="#">說明</a></li>
+					<li><a class="nav-link " href="#tool-page-scroll">工具</a></li>
+					<li><a class="nav-link " href="#contact-page-scroll">聯絡我們</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="main-container" dir="ltr">
+		<section id="intro-page-scroll">
+			<div id="intro-page">
+				<div class="row">
+					<div class="col-12">
+						<p id='intro' style="text-align:center;font-size:24px;">
+							上傳廣東話(粵語)影音檔案轉換成書面語字幕(繁體中文字)!<br>
+							免下載工具!<br>
+							可預覽字幕檔案!
+						</p>
+					</div>
+				</div>
+				<div class="row mx-auto">
+					<div class="col-sm-4 mx-auto col-12">
+						<div class="card card_red text-center" id="intro_card">
+							<h2>支持多種影音格式</h2>
+							<div id="intro_card_content">
+								<p>影片格式包括MP4, AVI, MKV, MOV, OGG等，<br>
+								及音頻格式包括MP3, WAV, AAC等</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 mx-auto col-12">
+						<div class="card card_red text-center" id="intro_card">
+							<h2>多種輸出方式</h2>
+							<div id="intro_card_content">
+								<p>可選擇SRT字幕檔輸出，<br>
+								或嵌入式字幕連影片輸出</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mx-auto">
+					<div class="col-sm-4 mx-auto col-12">
+						<div class="card card_red text-center" id="intro_card">
+							<h2>AI 生成字幕</h2>
+							<div id="intro_card_content">
+								<p>temp</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 mx-auto col-12">
+						<div class="card card_red text-center" id="intro_card">
+							<h2>高效率</h2>
+							<div id="intro_card_content">
+								<p>temp</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="scroll_tip">
+				<div class="mx-auto">
+
+				</div>
+			</div>
+		</section>
+		<section id="tool-page-scroll">
+			<center>
+				<p>上傳新檔案：<br>
+					<a href="{{url_for('go_back')}}"><button id="backToUpload_btn">回到上傳頁面</button></a>
+				</p>
+				<textarea id="outputText" name="outputText" disabled>{%for line in lines%}{{line}}{%endfor%}</textarea>
+				<a class="btn btn-success" href="{{url_for('download_file')}}" style="float:left;">下載純字幕檔</a>
+			</center>
+			<div class="row" id="settings_row">
+				<form action="/preview" enctype='multipart/form-data' id='preview_settings' target="_blank" method="POST">
+					<p id="settings">
+						<label>字體大小：</label>
+						<input type="text" id="fontsize" name="fontsize" value="24" class="setting_input"><br>
+					</p>
+					<p id="settings">
+						<label>字型：</label>
+						<input type="text" id="font" name="font" value="Microsoft-JhengHei-Light-&-Microsoft-JhengHei-UI-Light" class="setting_input"><br>
+					</p>
+					<p id="settings">
+						<label>字體顏色：</label>
+						<input type="text" id="color" name="color" value="white" class="setting_input"><br>
+					</p>
+					<p id="settings">
+						<label>字幕背景顏色：</label>
+						<input type="text" id="bg_color" name="bg_color" value="black" class="setting_input"><br>
+					</p>
+					<input type="submit" value="預覽影片" id="preview_btn"/>
+				</form>
+			</div>
+		</section>
+	</div>
+	<script>
+		var url="#tool-page-scroll";
+		window.location = url;
+	</script>	
+    <script src="{{ url_for('static', filename='js/index.js') }}" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/*editor css*/
+* {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+    background: rgba(34, 229, 3, 0.534);
+}
+
+header .logo{
+    position: relative;
+    margin: 0 15px;
+    font-weight: 500px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header .nav ul{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .nav ul li{
+    position: relative;
+    list-style: none;
+}
+
+header .nav ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+
+.navbar a:hover{
+    color:#f6c23a;
+}
+
+.navbar li{
+    float: right;
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+header.sticky{
+    padding:5px 100px;
+    background: #fff;
+}
+
+header.sticky .logo a,
+header.sticky ul li a{
+    color: black;
+}
+
+.align-center{
+    text-align: center;
+}
+.previewVideo{
+    margin-top: 15px;
+    margin-left: 15px;
+}
+#subFormatSettings{
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+#subEditSettings{
+    margin-top: 5px;
+    height:650px;
+    overflow: scroll;
+}
+tr{
+    overflow: scroll;
+}
+td{
+    word-break: break-word;
+}
+table{
+    max-width: 100%;
+    max-height: 600px;
+}
+video {
+    max-width: 100%;
+    max-height: 100%;
+}
+.download_btn{
+    margin-top: 50px;
+    float:right;
+}

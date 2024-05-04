@@ -1,0 +1,222 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>自動化字幕</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="static/style.css" /> 
+
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="static/responsive.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                    $('.advanced').click(function()
+                {
+                $('#hide').toggleClass("hidden");
+                });
+            });
+            $('#file-upload').change(function() {
+                var i = $(this).prev('label').clone();
+                var filename = $('input[type=file]').val().split('\\').pop();
+                $("#custom-file-upload").text(filename);
+            });
+        </script>    
+    </head>
+    <body data-spy="scroll" data-target=".navbar-collapse">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header> 
+            <div class="logo"><a href="#"><img src="static/logo.png" width='245' height="50"></a></div>
+            <nav class ="navbar">
+                <ul>
+                    <li><a href="">聯絡我們</a></li>
+                    <li><a href="#tool-page-scroll">工具</a></li>
+                    <li><a href="#">說明</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home" class="home">
+            <div class="overlay">
+                <div class="home-container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_home">
+                                <h1>字幕生成工具</h1>
+                                <p class="subtitle">幫廣東話影片加上書面語字幕！</p>
+                                <button type="button" class="btn btn-success">
+                                    <a href="#intro-page-scroll" class="menuInfo">更多資訊</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="intro-page-scroll" class="intro-page-scroll">
+                <div class="row">
+                    <div class="service_border_raund text-center"></div>
+                    <div class="main_service_area sections text-center">
+                        <div class="head_title">
+                            <h2 class="fancy">使用步驟</h2>
+                        </div>
+                        <div class="container1">
+                            <div class="inline">
+                                <div class="col-sm-4">
+                                    <div class="first_ul">
+                                        <ul>
+                                            <div class="single_service">
+                                                <li>
+                                                    <div class="single_service_icon">
+                                                        <img src="static/upload.png" alt="" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h3>上傳影片</h3>
+                                                </li>
+                                                <li>
+                                                    <p>只需上傳影片檔案即可開始產生字幕。
+                                                        接受多種影片格式，包括MP4, AVI, MKV, MOV。
+                                                    </p>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inline">
+                                <div class="col-sm-4">
+                                    <div class="second_ul">
+                                        <ul>
+                                            <div class="single_service">
+                                                <li>
+                                                    <div class="single_service_icon">
+                                                        <img src="static/configuration.png" alt="" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h3>調整設定</h3>
+                                                </li>
+                                                <li>
+                                                    <p>調整多種設定，提高字幕準度及外觀。</p>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inline">
+                                <div class="col-sm-4">
+                                    <div class="third_ul">
+                                        <ul>
+                                            <div class="single_service">
+                                                <li>
+                                                    <div class="single_service_icon">
+                                                        <img src="static/subtitle.png" alt="" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h3>下載成果</h3>
+                                                </li>
+                                                <li>
+                                                    <p>選擇下載純字幕檔或嵌入式影片。</p>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="tool-page-scroll">
+            <div class="row">
+                <div class="tool-container">
+                    <div class="col">
+                        <form id="convertForm" action="/takeFile" enctype='multipart/form-data' method="POST">
+                            <label for="file-upload" class="custom-file-upload" id="custom-file-upload">
+                                <i class="fa fa-cloud-upload"></i>此處上傳影片
+                            </label>
+                            <input name="videofile" id="file-upload" type="file" form="convertForm" style="display:none;"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    無視常見助語詞：
+                    <div id="common_stat">（已停用）</div>
+                    <input type="text" value="" id="cmignore_list" name="cmignore_list" form="convertForm"/>
+                </div>
+                <div class="col-1">
+                    <input type="submit" value="轉換" id="convert" form="convertForm"/>
+                </div>
+            </div>
+            <div class="row">
+                <div id='advanced'>進階選項</div>
+                <div class="col-8">
+                    <div class="hidden" id="hide">
+                    自訂無視詞語：
+                        <div id="custom_stat">（已停用）</div>
+                    <input type="text" value="" id="csignore_list" name="csignore_list" form="convertForm"/>
+                    <br><br>預設閾值:<div id="sliderAmount">50</div>
+                    <input type="range"  id="slide" name="th" min="30" max="70" step="1" value="50" form="convertForm"/>
+                    </div>
+            </div>
+		</section>
+
+        <footer id="footer" class="footer">
+            <div class="container">
+                <div class="main_footer">
+                    <div class="row">
+
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="copyright_text">
+                                <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="#">group 2023-jeff-3</a>.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="footer_socail">
+                                <a href="https://huggingface.co/datasets/raptorkwok/cantonese-traditional-chinese-parallel-corpus"><i class="fa fa-light fa-file"></i></a>
+                                <a href="http://210.3.248.199:8000/fyp/"><i class="fa fa-light fa-robot"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                <a href=""><i class="fa fa-rss"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- START SCROLL TO TOP  -->
+
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
+        </div>
+		
+		<script>
+            window.addEventListener("scroll", function(){
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky", window.scrollY > 0);
+
+            })
+        </script>
+        <script src="https://kit.fontawesome.com/67846f9abc.js" crossorigin="anonymous"></script>
+        <script src="static/js/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>

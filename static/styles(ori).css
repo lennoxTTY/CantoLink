@@ -1,0 +1,119 @@
+textarea{
+    resize: none;
+    border: 2px solid;
+    width: 100%;
+    height: 250px;
+    background-color: #512c3e;
+    border-radius: 25px;
+    font-size: 15px;
+    padding: 12px;
+    color:#e2e9e7;
+}
+#fileInput{
+    width:40%;
+    margin-left: 60px;
+}
+#convert,#backToUpload_btn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #2c5050;
+    border-radius: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #e2e9e7;
+}
+#intro_card{
+    background-color: #476581;
+    margin-top: 20px;
+    max-width: 400px;
+    min-width: 300px;
+    height:250px;
+    margin-bottom: 50px;
+    color: #b4ced9;
+}
+html{
+    scroll-snap-type: y mandatory;
+}
+section{
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-margin-top: 50px;
+    border-bottom: 1px solid #333333;
+}
+nav{
+    height:50px;
+    right:0;
+    left:0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+body{
+    padding: 50px;
+}
+#settings_row{
+    margin-top: 50px;
+}
+td:empty::after{
+    content: "\00a0";
+}
+#preview_settings{
+    display:table;
+}
+#settings{
+    display:table-row;
+}
+label{
+    display: table-cell;
+}
+.setting_input{
+    display: table-cell;
+}
+.slider {
+height: 25px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+border-radius: 5px;
+}
+.slider:hover {
+opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+appearance: none;
+width: 25px;
+height: 25px;
+background: url('.png');
+cursor: pointer;
+}
+.slider::-moz-range-thumb {
+width: 25px;
+height: 25px;
+background: url('.png');
+cursor: pointer;
+}
+@media only screen and (min-width: 600px) {
+    /* for tablets */
+       #intro_card{
+           width:60%;
+       }
+}
+@media only screen and (max-width: 615px) {
+    /* for mobiles */
+       #intro_card{
+           height: 50px;
+           margin-bottom:15px;
+       }
+       #intro_card_content{
+           display:none;
+       }
+       #title{
+           display:none;
+       }
+       #preview_settings{
+        display:none;
+    }
+}
